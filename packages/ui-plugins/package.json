@@ -1,5 +1,5 @@
 {
-  "name": "@neem/client-ui",
+  "name": "@neem/ui-plugins",
   "version": "0.1.0",
   "exports": "./mod.ts",
   "tasks": {
