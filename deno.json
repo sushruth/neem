@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:preact"
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [],
+      "exclude": [
+        "require-await"
+      ]
+    }
+  },
+  "fmt": {
+    "options": {
+      "useTabs": true,
+      "lineWidth": 80,
+      "indentWidth": 4,
+      "singleQuote": false
+    }
+  },
+  "tasks": {
+    "check": "deno fmt --check && deno lint && deno task test",
+    "test": "deno test --coverage=cov_report packages/*/mod.test.ts",
+    "bundle": "deno task bundle-client-ui && deno task bundle-service-worker && deno task bundle-server && deno task bundle-library && deno task bundle-types && deno task bundle-plugins",
+    "test-client-ui": "deno test --coverage=cov_report_client_ui packages/client-ui/mod.test.ts",
+    "bundle-client-ui": "deno bundle packages/client-ui/mod.ts ./dist/client-ui.js",
+    "test-service-worker": "deno test --coverage=cov_report_service_worker packages/service-worker/mod.test.ts",
+    "bundle-service-worker": "deno bundle packages/service-worker/mod.ts ./dist/service-worker.js",
+    "test-server": "deno test --coverage=cov_report_server packages/server/mod.test.ts",
+    "bundle-server": "deno bundle packages/server/mod.ts ./dist/server.js",
+    "test-library": "deno test --coverage=cov_report_library packages/library/mod.test.ts",
+    "bundle-library": "deno bundle packages/library/mod.ts ./dist/library.js",
+    "test-types": "deno test --coverage=cov_report_types packages/types/mod.test.ts",
+    "bundle-types": "deno bundle packages/types/mod.ts ./dist/types.js",
+    "test-plugins": "deno test --coverage=cov_report_plugins packages/plugins/mod.test.ts",
+    "bundle-plugins": "deno bundle packages/plugins/mod.ts ./dist/plugins.js"
+  },
+  "imports": {
+    "@neem/": "./packages/"
+  }
+}
