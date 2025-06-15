@@ -22,24 +22,25 @@
       "singleQuote": false
     }
   },
+  "workspace": [
+    "packages/*"
+  ],
   "tasks": {
     "check": "deno fmt --check && deno lint && deno task test",
-    "test": "deno test --coverage=cov_report packages/*/mod.test.ts",
+    "test": "deno test --coverage=cov_report",
     "bundle": "deno task bundle-client-ui && deno task bundle-service-worker && deno task bundle-server && deno task bundle-library && deno task bundle-types && deno task bundle-plugins",
-    "test-client-ui": "deno test --coverage=cov_report_client_ui packages/client-ui/mod.test.ts",
+    "test-client-ui": "deno test --coverage=cov_report_client_ui packages/client-ui",
     "bundle-client-ui": "deno bundle packages/client-ui/mod.ts ./dist/client-ui.js",
-    "test-service-worker": "deno test --coverage=cov_report_service_worker packages/service-worker/mod.test.ts",
+    "test-service-worker": "deno test --coverage=cov_report_service_worker packages/service-worker",
     "bundle-service-worker": "deno bundle packages/service-worker/mod.ts ./dist/service-worker.js",
-    "test-server": "deno test --coverage=cov_report_server packages/server/mod.test.ts",
+    "test-server": "deno test --coverage=cov_report_server packages/server",
     "bundle-server": "deno bundle packages/server/mod.ts ./dist/server.js",
-    "test-library": "deno test --coverage=cov_report_library packages/library/mod.test.ts",
+    "test-library": "deno test --coverage=cov_report_library packages/library",
     "bundle-library": "deno bundle packages/library/mod.ts ./dist/library.js",
-    "test-types": "deno test --coverage=cov_report_types packages/types/mod.test.ts",
+    "test-types": "deno test --coverage=cov_report_types packages/types",
     "bundle-types": "deno bundle packages/types/mod.ts ./dist/types.js",
-    "test-plugins": "deno test --coverage=cov_report_plugins packages/plugins/mod.test.ts",
+    "test-plugins": "deno test --coverage=cov_report_plugins packages/plugins",
     "bundle-plugins": "deno bundle packages/plugins/mod.ts ./dist/plugins.js"
   },
-  "imports": {
-    "@neem/": "./packages/"
-  }
+  "imports": {}
 }

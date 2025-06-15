@@ -1,0 +1,11 @@
+{
+  "scriptId": "338",
+  "url": "file:///app/packages/types/mod.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 52, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}
