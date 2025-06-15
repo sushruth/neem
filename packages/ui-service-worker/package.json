@@ -1,8 +1,8 @@
 {
-  "name": "@neem/ui-service-worker",
-  "version": "0.1.0",
-  "exports": "./mod.ts",
-  "tasks": {
-    "test": "deno test --coverage=cov_report mod.test.ts"
-  }
+	"name": "@neem/ui-service-worker",
+	"version": "0.1.0",
+	"exports": "./mod.ts",
+	"tasks": {
+		"test": "deno test --coverage=cov_report mod.test.ts"
+	}
 }

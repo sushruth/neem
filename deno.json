@@ -1,46 +1,40 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "npm:preact"
-  },
-  "lint": {
-    "rules": {
-      "tags": [
-        "recommended"
-      ],
-      "include": [],
-      "exclude": [
-        "require-await"
-      ]
-    }
-  },
-  "fmt": {
-    "options": {
-      "useTabs": true,
-      "lineWidth": 80,
-      "indentWidth": 4,
-      "singleQuote": false
-    }
-  },
-  "workspace": [
-    "packages/*"
-  ],
-  "tasks": {
-    "check": "deno fmt --check && deno lint && deno task test",
-    "test": "deno test --coverage=cov_report",
-    "bundle": "deno task bundle-client-ui && deno task bundle-service-worker && deno task bundle-server && deno task bundle-library && deno task bundle-types && deno task bundle-plugins",
-    "test-client-ui": "deno test --coverage=cov_report_client_ui packages/client-ui",
-    "bundle-client-ui": "deno bundle packages/client-ui/mod.ts ./dist/client-ui.js",
-    "test-service-worker": "deno test --coverage=cov_report_service_worker packages/service-worker",
-    "bundle-service-worker": "deno bundle packages/service-worker/mod.ts ./dist/service-worker.js",
-    "test-server": "deno test --coverage=cov_report_server packages/server",
-    "bundle-server": "deno bundle packages/server/mod.ts ./dist/server.js",
-    "test-library": "deno test --coverage=cov_report_library packages/library",
-    "bundle-library": "deno bundle packages/library/mod.ts ./dist/library.js",
-    "test-types": "deno test --coverage=cov_report_types packages/types",
-    "bundle-types": "deno bundle packages/types/mod.ts ./dist/types.js",
-    "test-plugins": "deno test --coverage=cov_report_plugins packages/plugins",
-    "bundle-plugins": "deno bundle packages/plugins/mod.ts ./dist/plugins.js"
-  },
-  "imports": {}
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "npm:preact"
+	},
+	"lint": {
+		"rules": {
+			"tags": ["recommended"],
+			"include": [],
+			"exclude": ["require-await"]
+		}
+	},
+	"fmt": {
+		"options": {
+			"useTabs": true,
+			"lineWidth": 80,
+			"indentWidth": 4,
+			"singleQuote": false
+		}
+	},
+	"workspace": ["packages/*"],
+	"tasks": {
+		"check": "deno fmt --check && deno lint && deno task test",
+		"test": "deno test --coverage=cov_report",
+		"bundle": "deno task bundle-ui-client && deno task bundle-ui-service-worker && deno task bundle-server && deno task bundle-library && deno task bundle-types && deno task bundle-ui-plugins",
+		"test-ui-client": "deno test --coverage=cov_report_client_ui packages/ui-client",
+		"bundle-ui-client": "deno bundle packages/ui-client/mod.ts ./dist/ui-client.js",
+		"test-ui-service-worker": "deno test --coverage=cov_report_service_worker packages/ui-service-worker",
+		"bundle-ui-service-worker": "deno bundle packages/ui-service-worker/mod.ts ./dist/ui-service-worker.js",
+		"test-server": "deno test --coverage=cov_report_server packages/server",
+		"bundle-server": "deno bundle packages/server/mod.ts ./dist/server.js",
+		"test-library": "deno test --coverage=cov_report_library packages/library",
+		"bundle-library": "deno bundle packages/library/mod.ts ./dist/library.js",
+		"test-types": "deno test --coverage=cov_report_types packages/types",
+		"bundle-types": "deno bundle packages/types/mod.ts ./dist/types.js",
+		"test-ui-plugins": "deno test --coverage=cov_report_ui-plugins packages/ui-plugins",
+		"bundle-ui-plugins": "deno bundle packages/ui-plugins/mod.ts ./dist/ui-plugins.js"
+	},
+	"imports": {}
 }
